@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Container, Button } from "reactstrap";
-import { NavLink, useNavigate } from "react-router-dom";
+import React, { useEffect, useRef, useContext } from "react";
+import { Container, Row, Button } from "reactstrap";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import "./Header.css";
+import { AuthContext } from "../../context/AuthContext";
 
 const nav_links = [
   { path: "/home", display: "Home" },
@@ -13,14 +14,11 @@ const nav_links = [
 const Header = () => {
   const headerRef = useRef(null);
   const menuRef = useRef(null);
-  const navigate = useNavigate();
-
-  // 🔹 Temporary auth state (replace later with real auth)
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [username, setUsername] = useState("User");
+  const navigate = useNavigate(); // ✅ correct place
+  const { user, dispatch } = useContext(AuthContext);
 
   const logout = () => {
-    setIsLoggedIn(false);
+    dispatch({ type: "LOGOUT" });
     navigate("/");
   };
 
@@ -47,66 +45,67 @@ const Header = () => {
   return (
     <header className="header" ref={headerRef}>
       <Container fluid className="px-0">
-        <div className="nav_wrapper d-flex align-items-center justify-content-between">
 
-          {/* Logo */}
-          <div className="logo">
-            <img src={logo} alt="Logo" className="logoImg" />
-          </div>
+        
+          <div className="nav_wrapper d-flex align-items-center justify-content-between">
+            
+            {/* Logo */}
+            <div className="logo">
+              <img src={logo} alt="Logo" className="logoImg" />
+            </div>
 
-          {/* Navigation */}
-          <div className="navigation" ref={menuRef}>
-            <ul className="menu d-flex align-items-center gap-5">
-              {nav_links.map((item, index) => (
-                <li className="nav__item" key={index}>
-                  <NavLink
-                    to={item.path}
-                    className={({ isActive }) =>
-                      isActive ? "active__link" : ""
-                    }
+            {/* Navigation */}
+            <div className="navigation" ref={menuRef}>
+              <ul className="menu d-flex align-items-center gap-5">
+                {nav_links.map((item, index) => (
+                  <li className="nav__item" key={index}>
+                    <NavLink
+                      to={item.path}
+                      className={({ isActive }) =>
+                        isActive ? "active__link" : ""
+                      }
+                    >
+                      {item.display}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Right buttons */}
+            <div className="nav_right d-flex align-items-center gap-4">
+              {user ? (
+                <>
+                  <h5 className="mb-0 btn primary__btn">
+                    {user.username}
+                  </h5>
+                  <Button className="btn btn-dark" onClick={logout}>
+                    Logout
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button
+                    className="btn secondary__btn"
+                    onClick={() => navigate("/login")}
                   >
-                    {item.display}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
+                    Login
+                  </Button>
+
+                  <Button
+                    className="btn primary__btn"
+                    onClick={() => navigate("/register")}
+                  >
+                    Register
+                  </Button>
+                </>
+              )}
+
+              <span className="mobile__menu" onClick={toggleMenu}>
+                <i className="ri-menu-line"></i>
+              </span>
+            </div>
           </div>
-
-          {/* Right buttons */}
-          <div className="nav_right d-flex align-items-center gap-4">
-            {isLoggedIn ? (
-              <>
-                <h5 className="mb-0 btn primary__btn">
-                  {username}
-                </h5>
-                <Button className="btn btn-dark" onClick={logout}>
-                  Logout
-                </Button>
-              </>
-            ) : (
-              <>
-                <Button
-                  className="btn secondary__btn"
-                  onClick={() => navigate("/login")}
-                >
-                  Login
-                </Button>
-
-                <Button
-                  className="btn primary__btn"
-                  onClick={() => navigate("/register")}
-                >
-                  Register
-                </Button>
-              </>
-            )}
-
-            {/* Mobile menu icon */}
-            <span className="mobile__menu" onClick={toggleMenu}>
-              <i className="ri-menu-line"></i>
-            </span>
-          </div>
-        </div>
       </Container>
     </header>
   );

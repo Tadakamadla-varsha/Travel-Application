@@ -1,0 +1,100 @@
+.footer {
+  padding: 60px 0 20px;
+  background: #fff;
+}
+
+element.style{
+  margin-top: 30px;
+}
+
+.footer .container {
+  max-width: 1200px;
+}
+
+.footer_row {
+  display: flex;
+  justify-content: space-between; /* KEY FIX */
+}
+
+.footer_col {
+ 
+  padding-left: 40px;
+  padding-right: 40px;
+  min-width: 200px;
+}
+
+/* LOGO FIX */
+.footer_logo img {
+  width: 160px;        /* same visual size as image-2 */
+  height: auto;
+  margin-bottom: 7px;
+  margin-top: 30px;
+}
+
+.footer_logo p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* SOCIAL ICONS */
+.social_links {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social_links i {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* HEADINGS */
+.footer_col h5 {
+ font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 28px;
+  white-space: nowrap;
+}
+
+/* LISTS */
+.footer_col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer_col ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 18px;
+   line-height: 1.6;
+     font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* CONTACT */
+.contact_list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* FOOTER BOTTOM */
+.footer_bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #777;
+}
+.ri-map-pin-line:before{
+color: orange;
+}
+.ri-mail-line:before{
+color: orange;
+}
+.ri-phone-line:before{
+    color: orange;
+}
