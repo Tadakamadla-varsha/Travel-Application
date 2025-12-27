@@ -1,4 +1,5 @@
-import Header from "../header/Header"
+import Footer from "../navbar/footer/Footer"
+import Header from "../navbar/Header"
 import { Routers } from "../router/Routers"
 
 export const Layout=()=>{
@@ -6,6 +7,7 @@ export const Layout=()=>{
         <>
         <Header/>
        <Routers/> 
+       <Footer/>
         </>
     )
 }
