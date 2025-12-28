@@ -7,6 +7,7 @@ export const Layout=()=>{
         <>
         <Header/>
        <Routers/> 
+       <br /><br /><br />
        <Footer/>
         </>
     )

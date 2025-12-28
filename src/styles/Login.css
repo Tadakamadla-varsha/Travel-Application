@@ -1,0 +1,155 @@
+/* =========================
+   Section Background
+========================= */
+section {
+/* background-color: #f4f5f7; */
+  padding: 2.5rem 0;
+}
+
+/* =========================
+   Login Card
+========================= */
+.login__container {
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: visible;
+  display: flex;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+  margin-top: 5rem;
+  height: 430px;
+}
+
+/* =========================
+   Left Image Panel
+========================= */
+.login__img {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.login__img img {
+  width: 90%;
+  max-width: 400px;
+}
+
+/* =========================
+   Right Login Panel
+========================= */
+.login__form {
+  width: 40%;
+  background: #ffa834;
+  padding: 3.5rem 3rem 2.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* =========================
+   User Icon (TOP CENTER)
+========================= */
+.login__form .user {
+  position: absolute;
+  top: -42px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85px;
+  height: 85px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login__form .user img {
+  width: 80px;
+  height: 80px;
+}
+
+/* =========================
+   Login Title
+========================= */
+.login__form h2 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.9rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+/* =========================
+   Inputs
+========================= */
+.login__form input {
+  width: 100%;
+  padding: 0.50rem 1rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.login__form input::placeholder {
+  color: #6c757d;
+}
+
+/* =========================
+   Login Button
+========================= */
+.auth__btn {
+  background: #0b3d3f !important;
+  color: #ffffff !important;
+  font-size: 1.05rem;
+  padding: 0.65rem;
+  border-radius: 8px;
+  border: none !important;
+  margin-top: 0.6rem;
+  transition: all 0.3s ease;
+}
+
+.auth__btn:hover {
+  background: #062c2d !important;
+}
+
+/* =========================
+   Register Text
+========================= */
+.login__form p {
+  text-align: center;
+  margin-top: 1.2rem;
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+
+.login__form p a {
+  color: #000000;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login__form p a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 992px) {
+  .login__container {
+    flex-direction: column;
+  }
+
+  .login__img,
+  .login__form {
+    width: 100%;
+  }
+
+  .login__form {
+    padding: 3.5rem 2rem 2.5rem;
+  }
+}
