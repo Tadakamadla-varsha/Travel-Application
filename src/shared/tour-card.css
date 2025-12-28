@@ -1,0 +1,167 @@
+/* ===============================
+   Tour Card Wrapper
+=============================== */
+.tour__card {
+  height: 100%;
+}
+
+/* ===============================
+   Card Base
+=============================== */
+.card {
+  border: none !important;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 25px 60px -12px;
+}
+
+/* ===============================
+   Tour Image
+=============================== */
+.tour__img {
+  position: relative;
+}
+
+.tour__img img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+}
+
+/* Featured Badge */
+.tour__img span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 3px 0 0 0;
+}
+
+/* ===============================
+   Card Top (Location & Rating)
+=============================== */
+.card__top {
+  margin-bottom: 0.5rem;
+}
+
+.card__top span i {
+  color: var(--secondary-color);
+}
+
+.tour__location {
+  color: var(--heading-color);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.tour__rating {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.tour__rating i {
+  color: var(--secondary-color);
+}
+
+/* ===============================
+   Tour Title
+=============================== */
+.tour__title {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.tour__title a {
+  text-decoration: none;
+  color: var(--heading-color);
+  transition: color 0.3s ease;
+}
+
+.tour__title a:hover {
+  color: var(--secondary-color);
+}
+
+/* ===============================
+   Card Bottom (Price & Button)
+=============================== */
+.card__bottom {
+  margin-top: 1rem;
+}
+
+.card__bottom h5 {
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.card__bottom h5 span {
+  font-weight: 500;
+  color: var(--text-color);
+  font-size: 0.8rem;
+}
+
+/* ===============================
+   Booking Button
+=============================== */
+.booking__btn {
+  background-color: orange !important;
+  color: black!important;
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  padding: 0.35rem 0.9rem !important;
+  border-radius: 6px;
+  border: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+}
+
+/* Hover */
+/* .booking__btn:hover {
+  background-color: #ff8c00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 165, 0, 0.4);
+} */
+
+/* Active */
+.booking__btn:active {
+  transform: scale(0.95);
+}
+
+/* Focus */
+.booking__btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.35);
+}
+
+/* ===============================
+   Responsive
+=============================== */
+@media (max-width: 768px) {
+  .tour__img img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .tour__img img {
+    height: 180px;
+  }
+}

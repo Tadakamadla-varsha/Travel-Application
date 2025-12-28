@@ -1,7 +1,7 @@
 // Footer.jsx
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
-import logo from "../../../assets/images/logo.png";
+import logo from "../../assets/images/logo.png";
 import "./Footer.css";
 
 const Footer = () => {

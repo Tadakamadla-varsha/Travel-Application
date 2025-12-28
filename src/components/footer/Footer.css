@@ -27,21 +27,21 @@ element.style{
 .footer_logo img {
   width: 160px;        /* same visual size as image-2 */
   height: auto;
-  margin-bottom: 7px;
-  margin-top: 30px;
+  padding-bottom: 45px;
 }
 
 .footer_logo p {
   font-size: 17px;
   line-height: 1.6;
   color: #555;
+  margin-bottom:30px
 }
 
 /* SOCIAL ICONS */
 .social_links {
   display: flex;
   gap: 15px;
-  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .social_links i {
