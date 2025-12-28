@@ -1,0 +1,46 @@
+/* ================= PAGINATION WRAPPER ================= */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+/* ================= PAGE BUTTON ================= */
+.page-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid #ff7e01;
+  background-color: #fff;
+  color: #ff7e01;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+/* Hover effect */
+.page-btn:hover {
+  background-color: #ff7e01;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ================= ACTIVE PAGE ================= */
+.page-btn.active__page {
+  background-color: #ff7e01;
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(255, 126, 1, 0.4);
+  transform: translateY(-2px);
+}
+
+/* ================= DISABLED (OPTIONAL) ================= */
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
