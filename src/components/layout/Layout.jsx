@@ -1,4 +1,4 @@
-import Footer from "../navbar/footer/Footer"
+import Footer from "../footer/Footer"
 import Header from "../navbar/Header"
 import { Routers } from "../router/Routers"
 
