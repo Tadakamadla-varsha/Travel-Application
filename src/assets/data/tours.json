@@ -114,7 +114,7 @@
     "reviews": [],
 
     "photo": "/tour-images/tour-img08.jpg",
-    "featured": false
+    "featured": true
   },
   {
     "title": "Cox's Bazar Sea Beach",
@@ -127,6 +127,6 @@
     "reviews": [],
 
     "photo": "/tour-images/tour-img09.jpg",
-    "featured": false
+    "featured": true
   }
 ]

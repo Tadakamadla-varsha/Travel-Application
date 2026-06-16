@@ -14,6 +14,8 @@ import FeaturedTourList from "../components/Featured-tours/FeatureTourList";
 import MasonryImagesGallery from "../components/Image-gallery/MasonryImagesGallery";
 import Testimonials from "../components/testimonial/Testimonials";
 import Newsletter from "../shared/Newsletter";
+import Booking from "../components/booking/Booking";
+import tours from "../assets/data/tours";
 
 const Home = () => {
   return (

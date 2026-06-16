@@ -1,26 +1,34 @@
+import React from "react";
 import TourCard from "../../shared/TourCard";
 import { Col } from "reactstrap";
-import tours from "../../assets/data/tours";
+import useFetch from "../../hooks/useFetch";
+import { BASE_URL } from "../../utils/config";
 
 const FeaturedTourList = () => {
+  const {
+    data: featuredTours,
+    loading,
+    error,
+  } = useFetch(`${BASE_URL}/tours/search/getFeaturedTours`);
 
-  const allTours = tours.slice(0, 8);
-
-  if (!allTours || allTours.length === 0) {
-    return (
-      <Col lg="12" className="text-center py-5">
-        No tours found
-      </Col>
-    );
-  }
+  console.log(featuredTours);
 
   return (
     <>
-      {allTours.map((tour) => (
-        <Col lg="3" md="6" sm="6" className="mb-4" key={tour.id}>
-          <TourCard tour={tour} />
-        </Col>
-      ))}
+      {loading && <h4>Loading...</h4>}
+      {error && <h4>{error}</h4>}
+
+      {!loading && !error && featuredTours?.length > 0 ? (
+        featuredTours.map((tour) => (
+          tour ? ( // ✅ check if tour is defined
+            <Col lg="3" className="mb-4" key={tour._id || tour.id}>
+              <TourCard tour={tour} />
+            </Col>
+          ) : null
+        ))
+      ) : (
+        <h4>No featured tours available.</h4>
+      )}
     </>
   );
 };
