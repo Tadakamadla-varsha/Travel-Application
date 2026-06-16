@@ -7,7 +7,9 @@ import useFetch from "../../hooks/useFetch";
 import { BASE_URL, token } from "../../utils/config";
 
 const Booking = ({ tour, avgRating }) => {
-  const { price, reviews, title } = tour;
+  if (!tour) return null;
+
+const { price, reviews, title } = tour;
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
 
